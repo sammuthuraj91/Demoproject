@@ -18,7 +18,7 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           port: 22
           script: |
-            cd /home/nyro/Ignite
+            cd /home/arul/My_Projects_devops-main
 
             echo "Pulling latest code..."
             git pull origin main
