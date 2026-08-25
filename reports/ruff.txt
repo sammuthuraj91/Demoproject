@@ -1,0 +1,690 @@
+warning: Invalid `# noqa` directive on appname/models/__init__.py:176: expected `:` followed by a comma-separated list of codes (e.g., `# noqa: F401, F841`).
+EXE001 Shebang is present but file is not executable
+ --> appname/__init__.py:1:1
+  |
+1 | #! ../env/bin/python
+  | ^^^^^^^^^^^^^^^^^^^^
+2 |
+3 | import sentry_sdk
+  |
+
+RUF012 Mutable default value for class attribute
+  --> appname/admin.py:34:29
+   |
+32 | class AdminModelView(sqla.ModelView):
+33 |     form_base_class = SecureForm
+34 |     form_excluded_columns = ['password', 'created']
+   |                             ^^^^^^^^^^^^^^^^^^^^^^^
+35 |
+36 |     def is_accessible(self):
+   |
+help: Consider initializing in `__init__` or annotating with `typing.ClassVar`
+
+RUF012 Mutable default value for class attribute
+  --> appname/admin.py:44:30
+   |
+43 | class UserView(AdminModelView):
+44 |     column_searchable_list = ['email']
+   |                              ^^^^^^^^^
+45 |     column_list = ['id', 'admin', 'email', 'created']
+46 |     column_exclude_list = ['password']
+   |
+help: Consider initializing in `__init__` or annotating with `typing.ClassVar`
+
+RUF012 Mutable default value for class attribute
+  --> appname/admin.py:45:19
+   |
+43 | class UserView(AdminModelView):
+44 |     column_searchable_list = ['email']
+45 |     column_list = ['id', 'admin', 'email', 'created']
+   |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+46 |     column_exclude_list = ['password']
+47 |     column_filters = ['admin']
+   |
+help: Consider initializing in `__init__` or annotating with `typing.ClassVar`
+
+RUF012 Mutable default value for class attribute
+  --> appname/admin.py:46:27
+   |
+44 |     column_searchable_list = ['email']
+45 |     column_list = ['id', 'admin', 'email', 'created']
+46 |     column_exclude_list = ['password']
+   |                           ^^^^^^^^^^^^
+47 |     column_filters = ['admin']
+48 |     can_export = True
+   |
+help: Consider initializing in `__init__` or annotating with `typing.ClassVar`
+
+RUF012 Mutable default value for class attribute
+  --> appname/admin.py:47:22
+   |
+45 |     column_list = ['id', 'admin', 'email', 'created']
+46 |     column_exclude_list = ['password']
+47 |     column_filters = ['admin']
+   |                      ^^^^^^^^^
+48 |     can_export = True
+   |
+help: Consider initializing in `__init__` or annotating with `typing.ClassVar`
+
+RUF012 Mutable default value for class attribute
+  --> appname/admin.py:51:30
+   |
+50 | class TeamView(AdminModelView):
+51 |     column_searchable_list = ['name']
+   |                              ^^^^^^^^
+52 |     column_list = ['id', 'plan', 'creator', 'subscription_id', 'created']
+53 |     column_exclude_list = []
+   |
+help: Consider initializing in `__init__` or annotating with `typing.ClassVar`
+
+RUF012 Mutable default value for class attribute
+  --> appname/admin.py:52:19
+   |
+50 | class TeamView(AdminModelView):
+51 |     column_searchable_list = ['name']
+52 |     column_list = ['id', 'plan', 'creator', 'subscription_id', 'created']
+   |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+53 |     column_exclude_list = []
+54 |     column_filters = ['plan']
+   |
+help: Consider initializing in `__init__` or annotating with `typing.ClassVar`
+
+RUF012 Mutable default value for class attribute
+  --> appname/admin.py:53:27
+   |
+51 |     column_searchable_list = ['name']
+52 |     column_list = ['id', 'plan', 'creator', 'subscription_id', 'created']
+53 |     column_exclude_list = []
+   |                           ^^
+54 |     column_filters = ['plan']
+55 |     can_export = True
+   |
+help: Consider initializing in `__init__` or annotating with `typing.ClassVar`
+
+RUF012 Mutable default value for class attribute
+  --> appname/admin.py:54:22
+   |
+52 |     column_list = ['id', 'plan', 'creator', 'subscription_id', 'created']
+53 |     column_exclude_list = []
+54 |     column_filters = ['plan']
+   |                      ^^^^^^^^
+55 |     can_export = True
+   |
+help: Consider initializing in `__init__` or annotating with `typing.ClassVar`
+
+RUF012 Mutable default value for class attribute
+  --> appname/admin.py:58:30
+   |
+57 | class TeamMemberView(AdminModelView):
+58 |     column_searchable_list = ['invite_email']
+   |                              ^^^^^^^^^^^^^^^^
+59 |     column_list = ['id', 'team', 'role', 'user', 'inviter', 'invite_email', 'activated']
+60 |     column_exclude_list = []
+   |
+help: Consider initializing in `__init__` or annotating with `typing.ClassVar`
+
+RUF012 Mutable default value for class attribute
+  --> appname/admin.py:59:19
+   |
+57 | class TeamMemberView(AdminModelView):
+58 |     column_searchable_list = ['invite_email']
+59 |     column_list = ['id', 'team', 'role', 'user', 'inviter', 'invite_email', 'activated']
+   |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+60 |     column_exclude_list = []
+61 |     column_filters = ['activated']
+   |
+help: Consider initializing in `__init__` or annotating with `typing.ClassVar`
+
+RUF012 Mutable default value for class attribute
+  --> appname/admin.py:60:27
+   |
+58 |     column_searchable_list = ['invite_email']
+59 |     column_list = ['id', 'team', 'role', 'user', 'inviter', 'invite_email', 'activated']
+60 |     column_exclude_list = []
+   |                           ^^
+61 |     column_filters = ['activated']
+62 |     can_export = True
+   |
+help: Consider initializing in `__init__` or annotating with `typing.ClassVar`
+
+RUF012 Mutable default value for class attribute
+  --> appname/admin.py:61:22
+   |
+59 |     column_list = ['id', 'team', 'role', 'user', 'inviter', 'invite_email', 'activated']
+60 |     column_exclude_list = []
+61 |     column_filters = ['activated']
+   |                      ^^^^^^^^^^^^^
+62 |     can_export = True
+   |
+help: Consider initializing in `__init__` or annotating with `typing.ClassVar`
+
+F401 `flask_restful.abort` imported but unused
+ --> appname/api/__init__.py:3:27
+  |
+1 | import flask_restful as restful
+2 | from flask import Blueprint, jsonify, request
+3 | from flask_restful import abort, fields, reqparse
+  |                           ^^^^^
+4 | from flask_restful.representations.json import output_json
+  |
+help: Remove unused import
+
+F401 `flask_restful.fields` imported but unused
+ --> appname/api/__init__.py:3:34
+  |
+1 | import flask_restful as restful
+2 | from flask import Blueprint, jsonify, request
+3 | from flask_restful import abort, fields, reqparse
+  |                                  ^^^^^^
+4 | from flask_restful.representations.json import output_json
+  |
+help: Remove unused import
+
+RUF012 Mutable default value for class attribute
+  --> appname/api/__init__.py:67:25
+   |
+66 | class Resource(restful.Resource):
+67 |     method_decorators = []
+   |                         ^^
+68 |     required_scopes = {}
+69 |     # applies to all inherited resources
+   |
+help: Consider initializing in `__init__` or annotating with `typing.ClassVar`
+
+RUF012 Mutable default value for class attribute
+  --> appname/api/__init__.py:68:23
+   |
+66 | class Resource(restful.Resource):
+67 |     method_decorators = []
+68 |     required_scopes = {}
+   |                       ^^
+69 |     # applies to all inherited resources
+   |
+help: Consider initializing in `__init__` or annotating with `typing.ClassVar`
+
+RUF012 Mutable default value for class attribute
+  --> appname/api/__init__.py:83:18
+   |
+81 |     The API responses are marshalled to json through get_fields
+82 |     """
+83 |     get_fields = {}
+   |                  ^^
+84 |
+85 |     def __init__(self):
+   |
+help: Consider initializing in `__init__` or annotating with `typing.ClassVar`
+
+RUF012 Mutable default value for class attribute
+  --> appname/api/info.py:7:18
+   |
+ 6 |   class APISchema(BaseAPISchema):
+ 7 |       get_fields = {
+   |  __________________^
+ 8 | |         'version': fields.String,
+ 9 | |         'url': fields.String,
+10 | |         'documentation': fields.String,
+11 | |     }
+   | |_____^
+help: Consider initializing in `__init__` or annotating with `typing.ClassVar`
+
+RUF012 Mutable default value for class attribute
+  --> appname/api/user.py:8:18
+   |
+ 7 |   class CurrentUserInfoSchema(BaseAPISchema):
+ 8 |       get_fields = {
+   |  __________________^
+ 9 | |         'id': fields.String,
+10 | |         'email': fields.String,
+11 | |         'full_name': fields.String,
+12 | |     }
+   | |_____^
+13 |
+14 |   class CurrentUserInfo(Resource):
+   |
+help: Consider initializing in `__init__` or annotating with `typing.ClassVar`
+
+SIM103 Return the condition `self.billing_type == UNLIMITED` directly
+  --> appname/billing_plans.py:29:9
+   |
+27 |       @property
+28 |       def can_add_more_users(self):
+29 | /         if self.billing_type == UNLIMITED:
+30 | |             return True
+31 | |         else:
+32 | |             return False
+   | |________________________^
+33 |
+34 |       @property
+   |
+help: Replace with `return self.billing_type == UNLIMITED`
+
+TRY002 Create your own exception
+  --> appname/billing_plans.py:47:23
+   |
+45 |             if len(subscription_items_for_this_plan) < 1:
+46 |                 logger.debug(f"Failed on subscription ID {self.team.subscription_id}")
+47 |                 raise Exception('Could not find billing for this product')
+   |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+48 |             subscription_item = subscription_items_for_this_plan[0]
+   |
+
+TRY002 Create your own exception
+  --> appname/billing_plans.py:56:15
+   |
+54 |     @classmethod
+55 |     def is_free(cls):
+56 |         raise Exception('BaseClass does not implement')
+   |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+57 |
+58 |     @classmethod
+   |
+
+BLE001 Do not catch blind exception: `Exception`
+   --> appname/controllers/auth.py:108:12
+    |
+106 |     try:
+107 |         email = token.decode(code, salt=constants.EMAIL_CONFIRMATION_SALT)
+108 |     except Exception:
+    |            ^^^^^^^^^
+109 |         email = None
+    |
+
+BLE001 Do not catch blind exception: `Exception`
+   --> appname/controllers/auth.py:175:12
+    |
+173 |     try:
+174 |         email = token.decode(code, salt=constants.PASSWORD_RESET_SALT)
+175 |     except Exception:
+    |            ^^^^^^^^^
+176 |         email = None
+    |
+
+F401 `.google.blueprint` imported but unused; consider removing, adding to `__all__`, or using a redundant alias
+ --> appname/controllers/oauth/__init__.py:1:34
+  |
+1 | from .google import blueprint as google_blueprint
+  |                                  ^^^^^^^^^^^^^^^^
+help: Use an explicit re-export: `blueprint as blueprint`
+
+PIE794 Class field `email` is defined multiple times
+  --> appname/forms/login.py:36:5
+   |
+34 |                                                      validators.EqualTo('confirm', message='Passwords must match')])
+35 |     confirm = PasswordField('Confirm Password', validators=[validators.InputRequired()])
+36 |     email = StringField('Email', validators=[validators.email(), validators.InputRequired()])
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+37 |     invite_secret = HiddenField('Invite ID')
+   |
+help: Remove duplicate field definition for `email`
+
+TRY002 Create your own exception
+  --> appname/helpers/gdpr.py:17:19
+   |
+16 |         if user != requesting_user and not requesting_user.is_admin:
+17 |             raise Exception('Cannot export report; Not enough permission')
+   |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+18 |
+19 |     def send_pii_export(self):
+   |
+
+RUF015 Prefer `next(m for m in memberships if m.id == session_id)` over single element slice
+  --> appname/helpers/session.py:12:16
+   |
+10 |         return memberships[0]
+11 |     elif session_id and session_id in [m.id for m in memberships]:
+12 |         return [m for m in memberships if m.id == session_id][0]
+   |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+13 |     else:
+14 |         # TODO: Should just raise an exception here.
+   |
+help: Replace with `next(m for m in memberships if m.id == session_id)`
+
+DTZ005 `datetime.datetime.now()` called without a `tz` argument
+  --> appname/mailers/store.py:15:41
+   |
+14 |     def send(self):
+15 |         key = f"{self.recipient.email}-{dt.now()}"
+   |                                         ^^^^^^^^
+16 |         license = token.generate(key, salt=constants.PURCHASE_LICENSE_SALT)
+17 |         html_body = render_template(self.TEMPLATE, license=license)
+   |
+help: Pass a `datetime.timezone` object to the `tz` parameter
+
+RUF012 Mutable default value for class attribute
+  --> appname/models/__init__.py:92:27
+   |
+90 |     query_class = QueryWithSoftDelete
+91 |
+92 |     GDPR_EXPORT_COLUMNS = {}
+   |                           ^^
+93 |
+94 |     def __repr__(self):
+   |
+help: Consider initializing in `__init__` or annotating with `typing.ClassVar`
+
+TRY002 Create your own exception
+   --> appname/models/__init__.py:114:19
+    |
+112 |         if force and not self.can_be_destroyed:
+113 |             logger.warning(f'Model {self} is not able to be force deleted')
+114 |             raise Exception(f'Cannot force destroy {self}')
+    |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+115 |         self.deleted = True
+116 |         return db.session.commit()
+    |
+
+RUF012 Mutable default value for class attribute
+  --> appname/models/team_file.py:21:27
+   |
+19 |       user = db.relationship("User", backref='team_files')
+20 |
+21 |       GDPR_EXPORT_COLUMNS = {
+   |  ___________________________^
+22 | |         "created": "When the invite was created",
+23 | |         "team_id": "What team was the invite for",
+24 | |         "creator_id": "Who created the file",
+25 | |         "file_name": "The name of the file",
+26 | |         "description": "The description of the file",
+27 | |     }
+   | |_____^
+help: Consider initializing in `__init__` or annotating with `typing.ClassVar`
+
+RUF012 Mutable default value for class attribute
+  --> appname/models/teams/team.py:33:27
+   |
+31 |       plan_owner = db.relationship("User", foreign_keys=[plan_owner_id])
+32 |
+33 |       GDPR_EXPORT_COLUMNS = {
+   |  ___________________________^
+34 | |         "id": "ID of the team",
+35 | |         "hashid": "ID of User",
+36 | |         "name": "Name of the team",
+37 | |         "plan": "What plan the team was on",
+38 | |         "created": "When the team was created"
+39 | |     }
+   | |_____^
+40 |
+41 |       def has_member(self, user):
+   |
+help: Consider initializing in `__init__` or annotating with `typing.ClassVar`
+
+RUF012 Mutable default value for class attribute
+  --> appname/models/teams/team_member.py:30:27
+   |
+28 |       inviter = db.relationship("User", foreign_keys=[inviter_id])
+29 |
+30 |       GDPR_EXPORT_COLUMNS = {
+   |  ___________________________^
+31 | |         "invite_email": "Email the invite was sent to",
+32 | |         "activated": "Was the invite activated?",
+33 | |         "created": "When the invite was created",
+34 | |         "team_id": "What team was the invite for",
+35 | |         "inviter_id": "Who sent the invite",
+36 | |         "role": "Role on team"
+37 | |     }
+   | |_____^
+38 |
+39 |       @classmethod
+   |
+help: Consider initializing in `__init__` or annotating with `typing.ClassVar`
+
+TRY002 Create your own exception
+  --> appname/models/teams/team_member.py:65:19
+   |
+63 |             self.team.billing_plan.record_change_in_usage()
+64 |         else:
+65 |             raise Exception('Already activated')
+   |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+RUF012 Mutable default value for class attribute
+  --> appname/models/user.py:32:27
+   |
+30 |                                                       engine=FernetEngine))
+31 |
+32 |       GDPR_EXPORT_COLUMNS = {
+   |  ___________________________^
+33 | |         "id": "ID of the user",
+34 | |         "hashid": "ID of User",
+35 | |         "email": "User Email",
+36 | |         "created": "When the user was created",
+37 | |         "full_name": "The users full name",
+38 | |         "email_confirmed": "Whether the email was confirmation"
+39 | |     }
+   | |_____^
+40 |
+41 |       # TODO: Refactor out our override of __init__. It should either be a 
+   |
+help: Consider initializing in `__init__` or annotating with `typing.ClassVar`
+
+RUF012 Mutable default value for class attribute
+   --> appname/models/user.py:151:27
+    |
+149 |           ),
+150 |       )
+151 |       GDPR_EXPORT_COLUMNS = {
+    |  ___________________________^
+152 | |         "provider_user_login": "Provider User Login",
+153 | |         "provider_user_id": "Provider User ID ",
+154 | |         "provider": "The provider",
+155 | |         "created_at": "When it was created"
+156 | |     }
+    | |_____^
+help: Consider initializing in `__init__` or annotating with `typing.ClassVar`
+
+PLE0704 Bare `raise` statement is not inside an exception handler
+  --> appname/roles.py:23:17
+   |
+21 |         def wrapped(*args, **kwargs):
+22 |             if get_user_role() not in roles:
+23 |                 raise
+   |                 ^^^^^
+24 |             return f(*args, **kwargs)
+25 |         return wrapped
+   |
+
+PLW1508 Invalid type for environment variable default; expected `str` or `None`
+  --> appname/settings.py:16:47
+   |
+14 |     # Email Config
+15 |     MAIL_SERVER = os.getenv('MAIL_SERVER', 'smtp.mailgun.org')
+16 |     MAIL_PORT = os.getenv('MAIL_SERVER_PORT', 2525)
+   |                                               ^^^^
+17 |     # mailers/__init__.py checks to see if this is Truthy before sending emails
+18 |     MAIL_USERNAME = os.getenv('MAIL_USERNAME')
+   |
+
+PLW1508 Invalid type for environment variable default; expected `str` or `None`
+  --> appname/settings.py:19:46
+   |
+17 |     # mailers/__init__.py checks to see if this is Truthy before sending emails
+18 |     MAIL_USERNAME = os.getenv('MAIL_USERNAME')
+19 |     MAIL_USE_TLS = os.getenv('MAIL_USE_TLS', True)
+   |                                              ^^^^
+20 |     MAIL_PASSWORD = os.getenv('MAIL_PASSWORD')
+21 |     MAIL_DEFAULT_SENDER = 'appname <admin@appname.com>'
+   |
+
+RUF012 Mutable default value for class attribute
+  --> appname/settings.py:37:30
+   |
+35 |     CACHE_REDIS_URL = RQ_REDIS_URL = _redis_url
+36 |     # rq-dashboard>=0.8 expects a sequence of redis urls
+37 |     RQ_DASHBOARD_REDIS_URL = [_redis_url]
+   |                              ^^^^^^^^^^^^
+38 |
+39 |     # File Storage
+   |
+help: Consider initializing in `__init__` or annotating with `typing.ClassVar`
+
+SIM115 Use a context manager for opening files
+  --> appname/settings.py:84:15
+   |
+82 |     DEBUG_TB_INTERCEPT_REDIRECTS = False
+83 |
+84 |     db_file = tempfile.NamedTemporaryFile()
+   |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+85 |     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + db_file.name
+86 |     SQLALCHEMY_ECHO = False  # Optionally enable if you want to see database actions
+   |
+
+DTZ005 `datetime.datetime.now()` called without a `tz` argument
+  --> appname/utils/time.py:34:28
+   |
+32 |     set at 23:59:59.
+33 |     """
+34 |     date = locale.localize(dt.datetime.now() + dt.timedelta(**kwargs))
+   |                            ^^^^^^^^^^^^^^^^^
+35 |     time = dt.time(hour=23, minute=59, second=59, microsecond=0)
+36 |     return dt.datetime.combine(date, time)
+   |
+help: Pass a `datetime.timezone` object to the `tz` parameter
+
+EXE001 Shebang is present but file is not executable
+ --> manage.py:1:1
+  |
+1 | #!/usr/bin/env python
+  | ^^^^^^^^^^^^^^^^^^^^^
+2 |
+3 | import binascii
+  |
+
+UP031 Use format specifiers instead of percent format
+  --> manage.py:20:18
+   |
+18 | # default to dev config because this should not be run in production
+19 | env = os.environ.get('APPNAME_ENV', 'dev')
+20 | app = create_app('appname.settings.%sConfig' % env.capitalize())
+   |                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+21 |
+22 | migrate = Migrate(app, db)
+   |
+help: Replace with format specifiers
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+   --> manage.py:107:12
+    |
+105 | @app.shell_context_processor
+106 | def make_shell_context():
+107 |     return dict(app=app, db=db, User=User)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: Rewrite as a literal
+
+RUF059 Unpacked variable `team` is never used
+   --> tests/test_dashboard_actions.py:286:15
+    |
+284 |     def test_remove_last_active_user_is_blocked(self, testapp):
+285 |         login_as_user(testapp)
+286 |         user, team, team_hash = user_team_and_hash()
+    |               ^^^^
+287 |         self_membership_hash = hashids.encode_id(user.active_memberships[0].id)
+    |
+help: Prefix it with an underscore or any other dummy variable pattern
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> tests/test_login.py:10:42
+   |
+ 8 |           """ Tests if the login form functions """
+ 9 |
+10 |           rv = testapp.post('/login', data=dict(
+   |  __________________________________________^
+11 | |             email='admin@example.com',
+12 | |             password="supersafepassword"
+13 | |         ), follow_redirects=True)
+   | |_________^
+14 |
+15 |           assert rv.status_code == 200
+   |
+help: Rewrite as a literal
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> tests/test_login.py:21:42
+   |
+19 |           """ Tests if the login form rejects invalid email """
+20 |
+21 |           rv = testapp.post('/login', data=dict(
+   |  __________________________________________^
+22 | |             email='admin',
+23 | |             password=""
+24 | |         ), follow_redirects=True)
+   | |_________^
+25 |
+26 |           assert rv.status_code == 200
+   |
+help: Rewrite as a literal
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> tests/test_login.py:32:42
+   |
+30 |           """ Tests if the login form fails correctly """
+31 |
+32 |           rv = testapp.post('/login', data=dict(
+   |  __________________________________________^
+33 | |             email='admin@example.com',
+34 | |             password="notsafepassword"
+35 | |         ), follow_redirects=True)
+   | |_________^
+36 |
+37 |           assert rv.status_code == 200
+   |
+help: Rewrite as a literal
+
+B017 Do not assert blind exception: `Exception`
+  --> tests/test_services_billing_utils.py:44:14
+   |
+42 |         admin = User.lookup("admin@example.com")
+43 |
+44 |         with pytest.raises(Exception):
+   |              ^^^^^^^^^^^^^^^^^^^^^^^^
+45 |             GDPRExport(admin, user)
+   |
+
+B017 Do not assert blind exception: `Exception`
+   --> tests/test_services_billing_utils.py:206:14
+    |
+204 |         monkeypatch.setattr(billing_plans_module.stripe, "all_subscription_items", lambda _subscription_id: [])
+205 |
+206 |         with pytest.raises(Exception):
+    |              ^^^^^^^^^^^^^^^^^^^^^^^^
+207 |             plan.record_change_in_usage()
+    |
+
+DTZ001 `datetime.datetime()` called without a `tzinfo` argument
+   --> tests/test_services_billing_utils.py:232:17
+    |
+230 |     def test_time_helpers(self, testapp):
+231 |         pacific = pytz.timezone("US/Pacific")
+232 |         naive = dt.datetime(2020, 1, 1, 12, 0, 0)
+    |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+233 |
+234 |         local_obj = time_utils.local_time_obj(naive, pacific)
+    |
+help: Pass a `datetime.timezone` object to the `tzinfo` parameter
+
+B017 Do not assert blind exception: `Exception`
+  --> tests/test_user.py:94:14
+   |
+93 |         monkeypatch.setattr(User, "can_be_destroyed", property(lambda _self: False))
+94 |         with pytest.raises(Exception):
+   |              ^^^^^^^^^^^^^^^^^^^^^^^^
+95 |             user.delete(force=True)
+   |
+
+EXE001 Shebang is present but file is not executable
+ --> wsgi.py:1:1
+  |
+1 | #!/usr/bin/env python3
+  | ^^^^^^^^^^^^^^^^^^^^^^
+2 | """
+3 | For WSGI Server
+  |
+
+UP031 Use format specifiers instead of percent format
+  --> wsgi.py:15:18
+   |
+14 | env = os.environ.get('APPNAME_ENV', 'dev')
+15 | app = create_app('appname.settings.%sConfig' % env.capitalize())
+   |                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: Replace with format specifiers
+
+Found 58 errors.
+No fixes available (10 hidden fixes can be enabled with the `--unsafe-fixes` option).

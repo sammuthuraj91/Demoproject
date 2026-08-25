@@ -1,0 +1,56 @@
+name: MyTemplate CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v1.2.5
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          port: 22
+          script: |
+            cd /home/nyro/Ignite
+
+            echo "Pulling latest code..."
+            git pull origin main
+
+            echo "Activating Python virtual environment..."
+            source .venv/bin/activate
+
+            echo "Running tests..."
+            make test
+
+            echo "Running lint..."
+            make lint
+
+            echo "Running security checks..."
+            make security
+
+            echo "Generating reports..."
+            make report
+
+            echo "Building Docker image..."
+            sudo docker rmi mytemplate:latest
+
+            echo "Building Docker image..."
+            sudo docker build -f docker/Dockerfile -t mytemplate:latest .
+
+            echo "Stopping old container..."
+            sudo docker rm -f mytemplate || true
+
+            echo "Starting new container..."
+            sudo docker run -d \
+              --name mytemplate \
+              -p 5000:5000 \
+              mytemplate:latest
+
+            echo "Deployment completed."
