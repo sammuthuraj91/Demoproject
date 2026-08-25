@@ -39,13 +39,7 @@ jobs:
             make report
 
             echo "Building Docker image..."
-            sudo docker rmi mytemplate:latest
-
-            echo "Building Docker image..."
             sudo docker build -f docker/Dockerfile -t mytemplate:latest .
-
-            echo "Stopping old container..."
-            sudo docker rm -f mytemplate || true
 
             echo "Starting new container..."
             sudo docker run -d \
