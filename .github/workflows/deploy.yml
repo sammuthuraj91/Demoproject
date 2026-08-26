@@ -38,6 +38,12 @@ jobs:
             echo "Generating reports..."
             make report
 
+            echo "Remove Old Docker image..."
+            sudo docker rm -f mytemplate
+            
+            echo "Remove Old Docker image..."
+            sudo docker rmi mytemplate:latest
+
             echo "Building Docker image..."
             sudo docker build -f docker/Dockerfile -t mytemplate:latest .
 
