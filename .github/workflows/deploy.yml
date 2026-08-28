@@ -50,7 +50,7 @@ jobs:
             echo "Starting new container..."
             sudo docker run -d \
               --name mytemplate \
-              -p 5000:5000 \
+              -p 5002:5002 \
               mytemplate:latest
 
             echo "Deployment completed."
