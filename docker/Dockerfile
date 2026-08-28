@@ -16,6 +16,6 @@ RUN pip install --no-cache-dir --upgrade pip \
 
 COPY . .
 
-EXPOSE 5000
+EXPOSE 5002
 
 CMD ["gunicorn", "--bind", "0.0.0.0:5002", "wsgi:app"]
